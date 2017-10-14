@@ -76,7 +76,7 @@ public class Cs460_assignment1 {
             char currentChar = plaintext.charAt(i);
             char newChar;
             if(Character.isAlphabetic(currentChar)) {
-                newChar = (char) ((((currentChar + key) - 'A') % 26) + 'A');   
+                newChar = (char) ((char) Math.floorMod(currentChar - 'A' + key, 26) + 'A');
             } else {
                 newChar = currentChar;
             }
@@ -91,7 +91,7 @@ public class Cs460_assignment1 {
             char currentChar = ciphertext.charAt(i);
             char newChar;
             if(Character.isAlphabetic(currentChar)) {
-                newChar = (char) ((((currentChar - key) - 'A') % 26) + 'A');   
+                newChar = (char) ((char) Math.floorMod(currentChar - 'A' - key, 26) + 'A');
             } else {
                 newChar = currentChar;
             }
