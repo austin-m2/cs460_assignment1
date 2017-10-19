@@ -5,7 +5,6 @@
  */
 package cs460_assignment1;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -15,6 +14,7 @@ import java.util.Scanner;
 public class Cs460_assignment1 {
     
     static Scanner sc = new Scanner(System.in);
+    static String savedText = null;
 
     /**
      * @param args the command line arguments
@@ -38,6 +38,7 @@ public class Cs460_assignment1 {
                 decrypt();
                 break;
             case 3:
+                freqAttack(savedText);
                 break;
             default:
                 break;
@@ -58,8 +59,8 @@ public class Cs460_assignment1 {
         String ciphertext = caesarEncrypt(plaintext, key);        
         System.out.println("Encrypted text:\n" + ciphertext);
         
-        
-        freqAttack(ciphertext);
+        savedText = ciphertext;
+        //freqAttack(ciphertext);
         
         
         
